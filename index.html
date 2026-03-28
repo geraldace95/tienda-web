@@ -57,11 +57,13 @@ h2{color:#6a11cb;}
 }
 
 .card{
-  background:white;
+  background:rgba(30,30,30,0.85);
+  backdrop-filter: blur(10px);
+  color:white;
   width:300px;
   padding:20px;
   border-radius:15px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  box-shadow:0 15px 35px rgba(0,0,0,0.5);
   transition:0.3s;
 }
 
@@ -72,18 +74,13 @@ h2{color:#6a11cb;}
 
 /* HERO BANNER */
 .hero{
-  background: linear-gradient(rgba(189,189,189,0.85), rgba(0,0,74,0.15)),
+  background: linear-gradient(rgba(189,189,189,0.900), rgba(0,0,74,0.100)),
               url('images/banner.jpg');
-  background-size: cover;
-  background-position: top center; /* AQUÍ lo ponemos arriba */
-  background-repeat: no-repeat;
-  height: 500px; /* altura real del banner */
-  display: flex;
-  align-items: center; /* centra el texto vertical */
-  justify-content: center;
+  background-size: contain;
+  background-position: 50% 10%;
+  padding: 120px 20px;
   color: white;
-  text-align: center;
-}}
+}
 
 .hero-content{
   max-width: 800px;
