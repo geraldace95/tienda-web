@@ -70,6 +70,53 @@ h2{color:#6a11cb;}
   box-shadow:0 15px 25px rgba(0,0,0,0.2);
 }
 
+/* HERO BANNER */
+.hero{
+  background: linear-gradient(rgba(189,189,189,0.85), rgba(0,0,74,0.15)),
+              url('images/banner.jpg');
+  background-size: cover;
+  background-position: top center; /* AQUÍ lo ponemos arriba */
+  background-repeat: no-repeat;
+  height: 500px; /* altura real del banner */
+  display: flex;
+  align-items: center; /* centra el texto vertical */
+  justify-content: center;
+  color: white;
+  text-align: center;
+}}
+
+.hero-content{
+  max-width: 800px;
+  margin: auto;
+}
+
+.hero h2{
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.hero p{
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #080708;
+}
+
+.hero-btn{
+  display:inline-block;
+  padding:14px 30px;
+  background:#2563eb;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:50px;
+  transition:0.3s;
+}
+
+.hero-btn:hover{
+  background:#1d4ed8;
+  transform:scale(1.05);
+}
+
 /* SLIDER */
 .slider{
   position:relative;
@@ -138,6 +185,14 @@ footer{
 <a href="https://www.instagram.com/g_tech_performance/" target="_blank" class="contact-item instagram">@g.techperformance</a>
 </div>
 </header>
+<section class="hero">
+  <div class="hero-content">
+    <h2>POTENCIA TU LAPTOP AL MÁXIMO</h2>
+    <p>VENTA DE LAPTOS, UPGRADES PROFESIONALES EN RAM Y SSD.</p>
+    <a href="https://wa.me/18094375470" target="_blank" class="hero-btn">
+      -COTIZAR AHORA-
+    </a>
+  </div>
 
 <section>
 <h2>Equipos Disponibles</h2>
@@ -172,25 +227,36 @@ footer{
 <a href="https://wa.me/18094375470" target="_blank" class="btn">Comprar</a>
 </div>
 
-<!-- RAM -->
+<!-- PRODUCTO 3 -->
 <div class="card">
-<img src="images/ram.jpg">
+<div class="slider" id="slider3">
+<img src="images/ram3-1.jpg" class="active">
+<img src="images/ram3-2.jpg">
+<img src="images/ram3-3.jpg">
+<img src="images/ram3-4.jpg">
+</div>
+<!-- RAM -->
 <h3>Memoria RAM 16GB / 8GB / 4GB</h3>
 <p>DDR4 Alta Velocidad</p>
 <div class="price">Desde RD$ 3,500</div>
 <a href="https://wa.me/18094375470" target="_blank" class="btn">Comprar</a>
 </div>
 
-<!-- SSD -->
+<!-- PRODUCTO 4 -->
 <div class="card">
-<img src="images/ssd.jpg">
+<div class="slider" id="slider4">
+<img src="images/SSD4-1.jpg" class="active">
+<img src="images/SSD4-2.jpg">
+<img src="images/SSD4-3.jpg">
+<img src="images/SSD4-4.jpg">
+</div>
+<!-- SSD -->
 <h3>SSD 512GB</h3>
 <p>Alto Rendimiento</p>
 <div class="price">RD$ 4,200</div>
 <a href="https://wa.me/18094375470" target="_blank" class="btn">Comprar</a>
 </div>
 
-</div>
 </section>
 
 <footer>
@@ -212,6 +278,8 @@ function startSlider(id){
 
 startSlider("slider1");
 startSlider("slider2");
+startSlider("slider3");
+startSlider("slider4");
 </script>
 
 </body>
