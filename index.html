@@ -11,52 +11,109 @@ body{
   font-family:Arial, sans-serif;
   background:#0f172a;
   text-align:center;
+  color:white;
 }
+
 /* HEADER */
 header{
   padding:40px 20px;
-  background:transparent;
+}
+
+.brand-title{
+  font-size:48px;
+  font-weight:800;
+  letter-spacing:2px;
+  margin:0;
+  background:linear-gradient(90deg,#2563eb,#38bdf8);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.brand-subtitle{
+  font-size:35px;
+  font-weight:600;
+  letter-spacing:3px;
+  margin-top:10px;
+  text-transform:uppercase;
+}
+
+/* HERO */
+
+.hero{
+  width: 100%;
+  height: 550px; /* puedes ajustar entre 500 y 650 */
+  background: 
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.6),
+      rgba(0,0,0,0.4),
+      rgba(0,0,0,0.7)
+    ),
+    url(images/banner.jpg);
+    
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-text{
+  font-size:28px;
+  font-weight:900;
+  margin:20px 0;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.hero-text.top{ color:white; }
+.hero-text.middle{ color:#C084FC; }
+.hero-text.bottom{ color:#38bdf8; }
+
+.hero-btn{
+  display:inline-block;
+  margin-top:20px;
+  margin-bottom:10px;
+  padding:14px 30px;
+  background:#2563eb;
   color:white;
-}
-
-
-.contact-links{
-  margin-top:15px;
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.contact-item{
   text-decoration:none;
-  color:white;
-  padding:10px 20px;
-  border-radius:50px;
   font-weight:bold;
+  border-radius:50px;
   transition:0.3s;
 }
+.hero-btn:hover{
+  background:#1d4ed8;
+  transform:scale(1.05);
+}
 
-.whatsapp{background:#25D366;}
-.instagram{background:#E1306C;}
+/* SECTION */
+section{
+  padding:30px 10px;
+}
+h2{
+  margin-top:20px;
+}
 
-.contact-item:hover{transform:scale(1.1);}
 
-/* SECTIONS */
-section{padding:50px 20px;}
-h2{color:#6a11cb;}
+h2{
+  color:#a855f7;
+  font-size:32px;
+}
 
-/* CARDS */
+/* PRODUCTS */
 .products{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:25px;
+  margin-top:40px;
 }
 
 .card{
-  background: #111;
-  color: white;
+  background:#111;
   width:300px;
   padding:20px;
   border-radius:15px;
@@ -69,62 +126,7 @@ h2{color:#6a11cb;}
   transform:translateY(-8px);
   box-shadow:0 20px 40px rgba(0,0,0,0.8);
 }
-/* HERO BANNER */
-.hero{
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-              url('images/banner.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 220px 20px;
-  color: white;
-}
 
-/* TEXTO INFERIOR */
-.hero-bottom{
-  font-size:30px;
-  font-weight:900;
-  color:#38bdf8; /* azul brillante profesional */
-  text-shadow:0 3px 15px rgba(0,0,0,0.8);
-}
-
-.hero-content{
-  max-width: 800px;
-  margin: auto;
-}
-
-.hero h2{
-  font-size: 40px;
-  margin-bottom: 20px;
-}
-
-
-.hero p{
-  font-size: 18px;
-  margin-bottom: 30px;
-  color: #080708;
-}
-.hero-top{
-  margin-top:1000px;
-}
-
-.hero-btn{
-  display:inline-block;
-  padding:14px 30px;
-  background:#2563eb;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  border-radius:50px;
-  transition:0.3s;
-}
-
-.hero-btn:hover{
-  background:#1d4ed8;
-  transform:scale(1.05);
-}
-
-/* SLIDER */
 .slider{
   position:relative;
   width:100%;
@@ -132,7 +134,7 @@ h2{color:#6a11cb;}
   overflow:hidden;
   border-radius:10px;
   margin-bottom:15px;
-  background:#f5f5f5;
+  background:#000;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -170,14 +172,17 @@ h2{color:#6a11cb;}
   transition:0.3s;
 }
 
-.btn:hover{transform:scale(1.05);}
+.btn:hover{
+  transform:scale(1.05);
+}
 
 footer{
   background:#111;
-  color:white;
   padding:20px;
   margin-top:40px;
 }
+
+/* BOTONES FLOTANTES */
 .floating-contact{
   position:fixed;
   bottom:20px;
@@ -204,14 +209,30 @@ footer{
   right:20px;
   background:#E1306C;
 }
-.brand-title{
-  font-size:48px;
+.promo{
+  padding:30px 20px 20px 20px;
+  background:#0f172a;
+}
+
+.promo-top{
+  font-size:30px;
+  font-weight:900;
+  color:white;
+  margin:10px 0;
+}
+
+.promo-middle{
+  font-size:26px;
   font-weight:800;
-  letter-spacing:2px;
-  margin:0;
-  background:linear-gradient(90deg,#2563eb,#38bdf8);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  color:#C084FC;
+  margin:10px 0;
+}
+
+.promo-bottom{
+  font-size:24px;
+  font-weight:700;
+  color:#38bdf8;
+  margin:10px 0;
 }
 </style>
 </head>
@@ -220,29 +241,28 @@ footer{
 
 <header>
 <h1 class="brand-title">G-TECH PERFORMANCE</h1>
-<p>RAM • SSD • LAPTOPS</p>
-
+<p class="brand-subtitle">RAM • SSD • LAPTOPS</p>
 </header>
-<section class="hero">
 
+<section class="hero"></section>
 
+<section class="promo">
+  <p class="promo-top">• LOS MEJORES EN PRECIOS •</p>
+  <p class="promo-middle">VENTA DE LAPTOPS</p>
+  <p class="promo-bottom">UPGRADES PROFESIONALES EN RAM Y SSD</p>
+
+  <a href="https://wa.me/18094375470" target="_blank" class="hero-btn">
+    COTIZAR AHORA
+  </a>
 </section>
 
-  <div class="hero-bottom">
+  </a>
 </section>
-
-  <div class="hero-bottom">
-
-</p> •LOS MEJORES EN PRECIOS• </p> 
-    VENTA DE LAPTOPS • UPGRADES PROFESIONALES EN RAM Y SSD
-  </div>
 
 <section>
+
 <h2>Equipos Disponibles</h2>
-<a href="https://wa.me/18094375470" target="_blank" class="hero-btn" style="margin-top:20px; display:inline-block;">
-COTIZAR AHORA
-</a>
-</p>
+
 
 <div class="products">
 
@@ -254,11 +274,10 @@ COTIZAR AHORA
 <img src="images/dell1-3.jpg">
 <img src="images/dell1-4.jpg">
 </div>
-<h3>LAPTOP DELL i5</h3> 
-<p>•8GB RAM DDR4</p> 
-</p>•512GB SSD</p>
-</p>•Cargador Original Incluido</p> 
-</p>
+<h3>LAPTOP DELL i5</h3>
+<p>• 8GB RAM DDR4</p>
+<p>• 512GB SSD</p>
+<p>• Cargador Original Incluido</p>
 <div class="price">RD$ 13,500</div>
 <a href="https://wa.me/18094375470" target="_blank" class="btn">Comprar</a>
 </div>
@@ -271,11 +290,10 @@ COTIZAR AHORA
 <img src="images/dell2-3.jpg">
 <img src="images/dell2-4.jpg">
 </div>
-<h3>LAPTOP DELL i3</h3>  
-<p>•8GB RAM DDR4</p> 
-</p>•256GB SSD</p>
-</p>•Cargador Original Incluido
-</p>
+<h3>LAPTOP DELL i3</h3>
+<p>• 8GB RAM DDR4</p>
+<p>• 256GB SSD</p>
+<p>• Cargador Original Incluido</p>
 <div class="price">RD$ 11,000</div>
 <a href="https://wa.me/18094375470" target="_blank" class="btn">Comprar</a>
 </div>
@@ -288,17 +306,15 @@ COTIZAR AHORA
 <img src="images/HPA3-3.jpg">
 <img src="images/HPA3-4.jpg">
 </div>
-<!-- LAPTOP PAVILION 17 HP-->
-<h3>LAPTOP PAVILION HP 17</h3> 
-<p>•12GB RAM DDR4</p> 
-</p>•256GB SSD</p>
-</p>•Cargador Original Incluido<p>
+<h3>LAPTOP PAVILION HP 17</h3>
+<p>• 12GB RAM DDR4</p>
+<p>• 256GB SSD</p>
+<p>• Cargador Original Incluido</p>
 <div class="price">RD$ 16,200</div>
 <a href="https://wa.me/18094375470" target="_blank" class="btn">Comprar</a>
 </div>
 
-
-<!-- PRODUCTO 4 --> 
+<!-- PRODUCTO 4 -->
 <div class="card">
 <div class="slider" id="slider4">
 <img src="images/ram4-1.jpg" class="active">
@@ -306,10 +322,9 @@ COTIZAR AHORA
 <img src="images/ram4-3.jpg">
 <img src="images/ram4-4.jpg">
 </div>
-<!-- RAM -->
 <h3>Memoria RAM 16GB / 8GB / 4GB</h3>
-<p>•DDR4 ALTA VELOCIDAD </p> 
-<div class="price">Desde RD$ 2,500</div> 
+<p>• DDR4 Alta Velocidad</p>
+<div class="price">Desde RD$ 2,500</div>
 <a href="https://wa.me/18094375470" target="_blank" class="btn">Comprar</a>
 </div>
 
@@ -321,15 +336,15 @@ COTIZAR AHORA
 <img src="images/SSD5-3.jpg">
 <img src="images/SSD5-4.jpg">
 </div>
-<!-- SSD -->
-<h3>•SSD M.2 •NVMe •HDD•</h3>  
-<p>•512GB<p> <p>•256GB<p> •128GB</p> 
+<h3>SSD M.2 • NVMe • HDD</h3>
+<p>• 512GB</p>
+<p>• 256GB</p>
+<p>• 128GB</p>
 <div class="price">Desde RD$ 2,500</div>
 <a href="https://wa.me/18094375470" target="_blank" class="btn">Comprar</a>
 </div>
 
-
-
+</div>
 </section>
 
 <footer>
@@ -356,15 +371,13 @@ startSlider("slider4");
 startSlider("slider5");
 </script>
 
-<!-- BOTONES FLOTANTES -->
-<a href="https://wa.me/18094375470" target="_blank" 
-   class="floating-contact whatsapp-float">
-   WhatsApp
+<a href="https://wa.me/18094375470" target="_blank" class="floating-contact whatsapp-float">
+WhatsApp
 </a>
 
-<a href="https://www.instagram.com/g_tech_performance/" target="_blank" 
-   class="floating-contact instagram-float">
-   Instagram
+<a href="https://www.instagram.com/g_tech_performance/" target="_blank" class="floating-contact instagram-float">
+Instagram
 </a>
+
 </body>
 </html>
