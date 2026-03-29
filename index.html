@@ -9,18 +9,16 @@
 body{
   margin:0;
   font-family:Arial, sans-serif;
-  background:linear-gradient(135deg,#dfe9f3,#ffffff);
+  background:#0f172a;
   text-align:center;
 }
-
 /* HEADER */
 header{
   padding:40px 20px;
-  background:linear-gradient(135deg,#6a11cb,#2575fc);
+  background:transparent;
   color:white;
-  border-radius:0 0 20px 20px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
+
 
 .contact-links{
   margin-top:15px;
@@ -57,28 +55,28 @@ h2{color:#6a11cb;}
 }
 
 .card{
-  background:rgba(30,30,30,0.85);
-  backdrop-filter: blur(10px);
-  color:white;
+  background: #111;
+  color: white;
   width:300px;
   padding:20px;
   border-radius:15px;
-  box-shadow:0 15px 35px rgba(0,0,0,0.5);
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
   transition:0.3s;
+  border:1px solid #222;
 }
 
 .card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 15px 25px rgba(0,0,0,0.2);
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.8);
 }
-
 /* HERO BANNER */
 .hero{
-  background: linear-gradient(rgba(189,189,189,0.900), rgba(0,0,74,0.100)),
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
               url('images/banner.jpg');
-  background-size: contain;
-  background-position: 50% 10%;
-  padding: 120px 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 160px 20px;
   color: white;
 }
 
@@ -168,31 +166,67 @@ footer{
   padding:20px;
   margin-top:40px;
 }
+.floating-contact{
+  position:fixed;
+  bottom:20px;
+  padding:12px 18px;
+  border-radius:50px;
+  font-weight:bold;
+  color:white;
+  text-decoration:none;
+  z-index:1000;
+  box-shadow:0 5px 20px rgba(0,0,0,0.4);
+  transition:0.3s;
+}
+
+.floating-contact:hover{
+  transform:scale(1.1);
+}
+
+.whatsapp-float{
+  left:20px;
+  background:#25D366;
+}
+
+.instagram-float{
+  right:20px;
+  background:#E1306C;
+}
+.brand-title{
+  font-size:48px;
+  font-weight:800;
+  letter-spacing:2px;
+  margin:0;
+  background:linear-gradient(90deg,#2563eb,#38bdf8);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>G-TECH PERFORMANCE</h1>
+<h1 class="brand-title">G-TECH PERFORMANCE</h1>
 <p>RAM • SSD • LAPTOPS</p>
 
-<div class="contact-links">
-<a href="https://wa.me/18094375470" target="_blank" class="contact-item whatsapp">WhatsApp</a>
-<a href="https://www.instagram.com/g_tech_performance/" target="_blank" class="contact-item instagram">@g.techperformance</a>
-</div>
 </header>
 <section class="hero">
   <div class="hero-content">
+  
     <h2>POTENCIA TU LAPTOP AL MÁXIMO</h2>
     <p>VENTA DE LAPTOS, UPGRADES PROFESIONALES EN RAM Y SSD.</p>
-    <a href="https://wa.me/18094375470" target="_blank" class="hero-btn">
-      -COTIZAR AHORA-
+
     </a>
   </div>
+</section>
 
 <section>
 <h2>Equipos Disponibles</h2>
+<a href="https://wa.me/18094375470" target="_blank" class="hero-btn" style="margin-top:20px; display:inline-block;">
+COTIZAR AHORA
+</a>
+
 
 <div class="products">
 
@@ -279,5 +313,15 @@ startSlider("slider3");
 startSlider("slider4");
 </script>
 
+<!-- BOTONES FLOTANTES -->
+<a href="https://wa.me/18094375470" target="_blank" 
+   class="floating-contact whatsapp-float">
+   WhatsApp
+</a>
+
+<a href="https://www.instagram.com/g_tech_performance/" target="_blank" 
+   class="floating-contact instagram-float">
+   Instagram
+</a>
 </body>
 </html>
