@@ -197,6 +197,36 @@ nav {
   margin: 0;
 }
 
+/* SECCIÓN G-TECH CUSTOM (ENCARGOS) - REUBICADA */
+.custom-section {
+  background: linear-gradient(135deg, rgba(37,99,235,0.1) 0%, rgba(6,182,212,0.1) 100%);
+  border: 1px solid rgba(59,130,246,0.2);
+  border-radius: 15px;
+  margin: 0 auto 60px auto; /* Ajuste de margen para fluidez */
+  max-width: 900px;
+  padding: 50px 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.custom-icon {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.custom-subtitle {
+  font-size: 24px;
+  color: var(--text-main);
+  margin-bottom: 20px;
+}
+
+.custom-section p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  font-size: 16px;
+}
+
 /* CATÁLOGO DE PRODUCTOS */
 .products {
   display: grid;
@@ -313,36 +343,6 @@ nav {
   color: var(--bg-dark);
 }
 
-/* SECCIÓN G-TECH CUSTOM (ENCARGOS) */
-.custom-section {
-  background: linear-gradient(135deg, rgba(37,99,235,0.1) 0%, rgba(6,182,212,0.1) 100%);
-  border: 1px solid rgba(59,130,246,0.2);
-  border-radius: 15px;
-  margin: 60px auto;
-  max-width: 900px;
-  padding: 50px 30px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-.custom-icon {
-  font-size: 50px;
-  margin-bottom: 10px;
-}
-
-.custom-subtitle {
-  font-size: 24px;
-  color: var(--text-main);
-  margin-bottom: 20px;
-}
-
-.custom-section p {
-  color: var(--text-muted);
-  max-width: 600px;
-  margin: 0 auto 30px auto;
-  font-size: 16px;
-}
-
 /* FEATURES / CONFIANZA */
 .trust-section {
   background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(30, 41, 59, 0.5) 100%);
@@ -429,8 +429,8 @@ footer {
   <a href="#" class="nav-logo">G-TECH</a>
   <div class="nav-links">
     <a href="#servicios">Servicios</a>
-    <a href="#catalogo">Catálogo</a>
     <a href="#custom">Encargos</a>
+    <a href="#catalogo">Catálogo</a>
   </div>
 </nav>
 
@@ -443,7 +443,7 @@ footer {
 </header>
 
 <!-- SECCIÓN SERVICIOS -->
-<section id="servicios" class="section-container">
+<section id="servicios" class="section-container" style="padding-bottom: 20px;">
   <h2 class="section-title">Nuestros <span>Servicios</span></h2>
   <div class="services-grid">
     <div class="service-card">
@@ -464,17 +464,28 @@ footer {
   </div>
 </section>
 
+<!-- SECCIÓN G-TECH CUSTOM (ENCARGOS) - REUBICADA DEBAJO DE SERVICIOS -->
+<section id="custom" class="custom-section">
+  <div class="custom-icon">📦</div>
+  <h2 class="section-title" style="margin-bottom: 10px;">G-TECH <span>Custom</span></h2>
+  <h3 class="custom-subtitle">Cotiza tu Equipo Ideal</h3>
+  <p>¿Buscas un equipo específico que no está en el catálogo? Conseguimos laptops para diseño, gaming, baterías, pantallas o repuestos especiales bajo encargo.</p>
+  <a href="https://wa.me/18492625470?text=Hola,%20quiero%20hacer%20un%20pedido%20especial%20o%20cotizar%20un%20equipo%20que%20no%20vi%20en%20el%20catálogo..." target="_blank" class="btn-primary">Hacer Pedido Especial</a>
+</section>
+
 <!-- SECCIÓN CATÁLOGO -->
-<section id="catalogo" class="section-container">
+<section id="catalogo" class="section-container" style="padding-top: 0;">
   <h2 class="section-title">Catálogo <span>Destacado</span></h2>
   
   <div class="products">
 
-    <!-- PRODUCTO 1: Dell 7400 -->
+    <!-- PRODUCTO 1: Dell 7400 (CON FOTOS REALES) -->
     <div class="card">
       <div class="slider slider-product">
-        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=800" class="active" alt="Dell Latitude 7400 Frontal" onerror="this.src='https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=800'">
-        <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=800" alt="Dell Latitude 7400" onerror="this.style.display='none'">
+        <img src="https://lh3.googleusercontent.com/gpu-csl/AM3A8OZxyPL5j3i4DjlVlHqr5O7diGK0W4S2CNsZSp1U6exI1ExWloqBdLFPYn2SthrIolw4iz-l9wUGaARiei5x9L4NmrLxumoIKySEjAuxy3rnM8uEBpc9A8fs6LNEIv0yYPxRtCu7Y_rHRsZs" class="active" alt="Dell Latitude 7400 Tapa Gris">
+        <img src="https://lh3.googleusercontent.com/gpu-csl/AM3A8ObwwhnWMnlwFtCdinyaoiuucLVwudvxn6Pv_Tm4McqBm7cNoPSBMgbJDK1BS8h9WznjJuMHxH8XkQzAEMoUWpPsb0tgYO_oFj5mZYswZvTodckLztMgglglmW3HFDhe0q8FT1SNfGfbOeJN" alt="Dell Latitude 7400 Tapa con pegatinas rojas">
+        <img src="https://lh3.googleusercontent.com/gpu-csl/AM3A8Oa70IZUuhFyN9rjXyE6yZIWi8fURg-xuz15T8ujfo3Y_ihSzeL-X9DNHgWCyfxV9JvnO0QRxvrtXVUlkhFkMRe5n-nL12fzoSn77tlvcCmhj5bRsB5d9NKjH2PFv_sA-PXJd4Vz27U8taF4" alt="Dell Latitude 7400 Perfil">
+        <img src="https://lh3.googleusercontent.com/gpu-csl/AM3A8ObQJz6_rI6rmLZvj_9szWWgeacOpVvnXBLVmBLorhi0k2wxyCB-7ShOo6B_I53hLKvew1-oBFa4nDS5b9QAKc-7On8MuIpjunONlaQYTgQkBZKBMaRdmgkVyOwp6NeOPBVQWzll1ZEcy11h" alt="Dell Latitude 7400 Frontal Abierta">
       </div>
       <div class="card-content">
         <h3>Dell Latitude 7400</h3>
@@ -485,18 +496,18 @@ footer {
           <li>Color: Gris Premium</li>
         </ul>
         <div class="price-row">
-          <div class="price">RD$ 14,000</div>
+          <div class="price">RD$ 17,500</div>
           <a href="https://wa.me/18492625470?text=Hola,%20me%20interesa%20la%20Dell%20Latitude%207400%20(i5,%2016GB)" target="_blank" class="btn-buy">Comprar</a>
         </div>
       </div>
     </div>
 
-    <!-- PRODUCTO 2: Dell 5530 (ENLACES DE IMAGEN DIRECTOS CORREGIDOS) -->
+    <!-- PRODUCTO 2: Dell 5530 (CON FOTOS REALES) -->
     <div class="card">
       <div class="slider slider-product">
-        <!-- Reemplazados con imágenes estáticas directas que no fallan en iPhone -->
-        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800" class="active" alt="Dell Latitude 5530">
-        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800" alt="Dell Latitude 5530 Lateral">
+        <img src="https://lh3.googleusercontent.com/gpu-csl/AM3A8OZAsp6B2_a0b1Edpkrwjipdj4OrDfvauTBGSh5-D5mcofLeguyUuN1uYuSoOZOtQ9iHpcDePxqKEt7gD-FvxpRH2Ro7XlmnZOjZhl36LNg4s83XyNqhqMF1m9nFQGk2cAsRExmfjj-0lmDl" class="active" alt="Dell Latitude 5530 Frontal">
+        <img src="https://lh3.googleusercontent.com/gpu-csl/AM3A8OZMH4CXKBciTZrnZm_76EBWONvVvbZGtsvEm648l8NC_vtdKagLebjhXr4mmeH29D8u6RownYdjV55AlBmdRUrdsi4C2CdzOqx0-_OgU8v1w0os8HJShJ7opoJ8Q8mSoijJdCgIIpaHzKN9" alt="Dell Latitude 5530 Tapa Inferior">
+        <img src="https://lh3.googleusercontent.com/gpu-csl/AM3A8OaZvbGWL6EIdb8iz3rasLEzD_FmD4Bfp5QxuE8RLePqI8z97CYd52NL0YiN4kNUcrDEEZYRInwjKxeKOGZBEYbHcfFQPtsTUhtGIQIIQ67VMne5wCY-m1qopTu2QtuVrlSsKXk6lUzlLjkv" alt="Dell Latitude 5530 BIOS">
       </div>
       <div class="card-content">
         <h3>Dell Latitude 5530</h3>
@@ -513,12 +524,11 @@ footer {
       </div>
     </div>
 
-    <!-- PRODUCTO 3: Inspiron 5555 (ENLACES DE IMAGEN DIRECTOS CORREGIDOS) -->
+    <!-- PRODUCTO 3: Inspiron 5555 (CON FOTOS REALES) -->
     <div class="card">
       <div class="slider slider-product">
-         <!-- Reemplazados con imágenes estáticas directas que no fallan en iPhone -->
-        <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=800" class="active" alt="Dell Inspiron 5555 Roja">
-        <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=800" alt="Dell Inspiron 5555 Frontal">
+        <img src="https://lh3.googleusercontent.com/gpu-csl/AM3A8OaX24TQr3UpBuO-lqZpUhuXy7Q1MIaOGXsHiSo4VTPcXbbcdOVlUtQcfuYt51a8p0X-ivWJLL6IJxho0eC1SKujJYR3NUpMfsCjk49xgmD9LBxD42H8Lz0wqM6yR2jcK0lpSfRkA7a8em1K" class="active" alt="Dell Inspiron 5555 Teclado y Touchpad">
+        <img src="https://lh3.googleusercontent.com/gpu-csl/AM3A8Ob_aVzaK-eEW7Bs1BbB2ZEEAKDrZ7YTGznW77L5qMRGmi-qV9sm5KqDogqgYrKCs15W3twZt5T5e8K-WDn_nyn_0ari0miIq9ryB7IozA3HkNi6gV2crnxJ5R7NJRCBIi2PfraT5WkaPChG" alt="Dell Inspiron 5555 Teclado Perfil">
       </div>
       <div class="card-content">
         <h3>Dell Inspiron 5555</h3>
@@ -529,7 +539,7 @@ footer {
           <li>Color: Rojo (Tapa negra)</li>
         </ul>
         <div class="price-row">
-          <div class="price">RD$ 8,500</div>
+          <div class="price">RD$ 11,500</div>
           <a href="https://wa.me/18492625470?text=Hola,%20me%20interesa%20la%20Dell%20Inspiron%20Roja" target="_blank" class="btn-buy">Comprar</a>
         </div>
       </div>
@@ -575,7 +585,7 @@ footer {
           <li>Cargador Original</li>
         </ul>
         <div class="price-row">
-          <div class="price">RD$ 9,500</div>
+          <div class="price">RD$ 12,000</div>
           <a href="https://wa.me/18492625470" target="_blank" class="btn-buy">Comprar</a>
         </div>
       </div>
@@ -674,15 +684,6 @@ footer {
   </div>
 </section>
 
-<!-- SECCIÓN G-TECH CUSTOM (ENCARGOS) -->
-<section id="custom" class="custom-section">
-  <div class="custom-icon">📦</div>
-  <h2 class="section-title" style="margin-bottom: 10px;">G-TECH <span>Custom</span></h2>
-  <h3 class="custom-subtitle">Cotiza tu Equipo Ideal</h3>
-  <p>¿Buscas un equipo específico que no está en el catálogo? Conseguimos laptops para diseño, gaming, baterías, pantallas o repuestos especiales bajo encargo.</p>
-  <a href="https://wa.me/18492625470?text=Hola,%20quiero%20hacer%20un%20pedido%20especial%20o%20cotizar%20un%20equipo%20que%20no%20vi%20en%20el%20catálogo..." target="_blank" class="btn-primary">Hacer Pedido Especial</a>
-</section>
-
 <!-- SECCIÓN CONFIANZA -->
 <section id="garantia" class="trust-section">
   <div class="trust-grid">
@@ -711,7 +712,7 @@ footer {
   <a href="https://www.instagram.com/g_tech_performance/" style="color:var(--accent-blue); text-decoration:none; margin-top:10px; display:inline-block;">Síguenos en Instagram</a>
 </footer>
 
-<!-- SCRIPT DEL SLIDER (CORREGIDO PARA CUALQUIER CANTIDAD DE PRODUCTOS) -->
+<!-- SCRIPT DEL SLIDER -->
 <script>
   function initSliders() {
     const sliders = document.querySelectorAll('.slider-product');
