@@ -3,294 +3,434 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>G-TECH PERFORMANCE</title>
+<title>G-TECH PERFORMANCE | Laptops & Hardware</title>
 
 <style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#0f172a;
-  text-align:center;
-  color:white;
+/* VARIABLES DE COLOR - TONALIDAD PREMIUM */
+:root {
+  --bg-dark: #0B1120;
+  --bg-card: #1E293B;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --accent-blue: #3B82F6;
+  --accent-cyan: #06B6D4;
+  --price-color: #38BDF8;
+  --whatsapp: #25D366;
 }
 
-/* HEADER */
-header{
-  padding:40px 20px 20px 20px;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
 }
 
-.brand-title{
-  font-size:48px;
-  font-weight:800;
-  letter-spacing:2px;
-  margin:0;
-  background:linear-gradient(90deg,#2563eb,#38bdf8);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.brand-subtitle{
-  font-size:35px;
-  font-weight:600;
-  letter-spacing:3px;
-  margin-top:10px;
-  text-transform:uppercase;
-}
-
-/* HERO (Banner Principal Mejorado) */
-.hero{
+/* NAVBAR (Menú de Navegación Sticky) */
+nav {
+  position: fixed;
+  top: 0;
   width: 100%;
-  min-height: 550px;
-  /* Fondo oscuro con gradiente para que se lea el texto sobre la imagen */
-  background: 
-    linear-gradient(
-      to bottom,
-      rgba(15,23,42,0.8),
-      rgba(15,23,42,0.6),
-      rgba(15,23,42,0.9)
-    ),
-    url('images/banner.jpg');
-    
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  
+  background: rgba(11, 17, 32, 0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  z-index: 1000;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-logo {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent-cyan);
+}
+
+/* BANNER HERO PROFESIONAL */
+.hero {
+  margin-top: 60px; /* Compensa el navbar fijo */
+  width: 100%;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding: 40px 20px;
+  
+  /* Imagen de fondo profesional (Placa base/Tech) con overlay oscuro */
+  background: linear-gradient(
+      to bottom,
+      rgba(11, 17, 32, 0.7),
+      rgba(11, 17, 32, 0.95)
+    ),
+    url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2000&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.promo-top{
-  font-size:30px;
-  font-weight:900;
-  color:white;
-  margin:10px 0;
+.hero-tag {
+  background: rgba(59, 130, 246, 0.2);
+  color: var(--accent-cyan);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
   letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border: 1px solid rgba(59, 130, 246, 0.4);
 }
 
-.promo-middle{
-  font-size:26px;
-  font-weight:800;
-  color:#C084FC;
-  margin:10px 0;
+.hero h1 {
+  font-size: 48px;
+  font-weight: 900;
+  margin: 0 0 15px 0;
+  line-height: 1.1;
+  letter-spacing: -1px;
 }
 
-.promo-bottom{
-  font-size:20px;
-  font-weight:700;
-  color:#38bdf8;
-  margin:15px 0 30px 0;
-  max-width: 600px;
-  line-height: 1.5;
-}
-
-.hero-btn{
-  display:inline-block;
-  padding:14px 40px;
-  background:#2563eb;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
+.hero p {
   font-size: 18px;
-  border-radius:50px;
-  transition:0.3s;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
-}
-.hero-btn:hover{
-  background:#1d4ed8;
-  transform:scale(1.05);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 0 30px 0;
 }
 
-/* SECTIONS */
-section{
-  padding:40px 10px;
-}
-
-h2{
-  color:#a855f7;
-  font-size:32px;
-  margin-bottom: 10px;
-}
-
-/* PRODUCTS */
-.products{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:25px;
-  margin-top:20px;
-}
-
-.card{
-  background:#111;
-  width:300px;
-  padding:20px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.6);
-  transition:0.3s;
-  border:1px solid #222;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 40px rgba(0,0,0,0.8);
-  border-color: #38bdf8;
-}
-
-.slider{
-  position:relative;
-  width:100%;
-  height:250px;
-  overflow:hidden;
-  border-radius:10px;
-  margin-bottom:15px;
-  background:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.slider img{
-  position:absolute;
-  max-width:100%;
-  max-height:100%;
-  object-fit:contain;
-  opacity:0;
-  transition:opacity 0.6s ease;
-}
-
-.slider img.active{
-  opacity:1;
-}
-
-.card h3 {
+.btn-primary {
+  display: inline-block;
+  padding: 15px 40px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
   color: white;
-  margin-bottom: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(59, 130, 246, 0.5);
+}
+
+/* SECCIONES GENERALES */
+.section-container {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.section-title span {
+  color: var(--accent-blue);
+}
+
+/* NUEVA SECCIÓN: SERVICIOS */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+  text-align: left;
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  border-color: var(--accent-cyan);
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  margin: 0 0 10px 0;
   font-size: 20px;
 }
 
-.card p {
-  margin: 5px 0;
+.service-card p {
+  color: var(--text-muted);
+  font-size: 15px;
+  margin: 0;
+}
+
+/* CATÁLOGO DE PRODUCTOS */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.card {
+  background: var(--bg-card);
+  width: 100%;
+  max-width: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-blue);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: #fff; /* Fondo blanco para que resalten las fotos de los equipos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slider img {
+  position: absolute;
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slider img.active {
+  opacity: 1;
+}
+
+.card-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.specs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+.specs-list li {
   font-size: 14px;
-  color: #ccc;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
 }
 
-.price{
-  font-size:24px;
-  font-weight:bold;
-  color:#ff7e5f;
-  margin-top:15px;
+.specs-list li::before {
+  content: "✓";
+  color: var(--accent-cyan);
+  font-weight: bold;
+  margin-right: 8px;
 }
 
-.btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:12px 30px;
-  background:#25D366;
-  color:white;
-  text-decoration:none;
-  border-radius:50px;
-  font-weight:bold;
-  transition:0.3s;
-  width: 80%;
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-.btn:hover{
-  transform:scale(1.05);
-  background: #20b858;
+.price {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--price-color);
 }
 
-footer{
-  background:#111;
-  padding:25px;
-  margin-top:40px;
-  border-top: 1px solid #222;
-  color: #777;
+.btn-buy {
+  background: transparent;
+  color: var(--accent-cyan);
+  border: 1px solid var(--accent-cyan);
+  padding: 8px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-buy:hover {
+  background: var(--accent-cyan);
+  color: var(--bg-dark);
+}
+
+/* FEATURES / CONFIANZA */
+.trust-section {
+  background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(30, 41, 59, 0.5) 100%);
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.trust-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.trust-item h4 {
+  margin: 10px 0 5px 0;
+  color: var(--text-main);
+}
+.trust-item p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* FOOTER */
+footer {
+  background: #060A13;
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
 }
 
 /* BOTONES FLOTANTES */
-.floating-contact{
-  position:fixed;
-  bottom:20px;
-  padding:12px 20px;
-  border-radius:50px;
-  font-weight:bold;
-  color:white;
-  text-decoration:none;
-  z-index:1000;
-  box-shadow:0 5px 20px rgba(0,0,0,0.4);
-  transition:0.3s;
+.floating-contact {
+  position: fixed;
+  bottom: 20px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.floating-contact:hover{
-  transform:scale(1.1);
+.floating-contact:hover {
+  transform: translateY(-5px);
 }
 
-.whatsapp-float{
-  left:20px;
-  background:#25D366;
+.whatsapp-float {
+  right: 20px; /* Movido a la derecha (estándar moderno) */
+  background: var(--whatsapp);
 }
 
-.instagram-float{
-  right:20px;
-  background:#E1306C;
-}
-
-/* RESPONSIVE DESIGN PARA MÓVILES */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .brand-title {
-    font-size: 32px;
-  }
-  .brand-subtitle {
-    font-size: 22px;
-  }
-  .promo-top {
-    font-size: 24px;
-  }
-  .promo-middle {
-    font-size: 22px;
-  }
-  .promo-bottom {
-    font-size: 16px;
-  }
-  .whatsapp-float, .instagram-float {
-    font-size: 12px;
-    padding: 10px 15px;
-  }
+  .nav-links { display: none; } /* Oculta menú en móviles para limpieza */
+  .hero h1 { font-size: 36px; }
+  .section-title { font-size: 26px; }
+  .trust-grid { flex-direction: column; gap: 20px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- CABECERA -->
-<header>
-  <h1 class="brand-title">G-TECH PERFORMANCE</h1>
-  <p class="brand-subtitle">RAM • SSD • LAPTOPS</p>
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="nav-logo">G-TECH</a>
+  <div class="nav-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#garantia">Garantía</a>
+  </div>
+</nav>
+
+<!-- HERO PROFESIONAL -->
+<header class="hero">
+  <div class="hero-tag">Alto Rendimiento Garantizado</div>
+  <h1>Potencia y Velocidad<br>Para Tu Laptop</h1>
+  <p>Venta de equipos garantizados, repuestos y servicio técnico profesional en Azua, República Dominicana.</p>
+  <a href="https://wa.me/18492625470" target="_blank" class="btn-primary">Cotizar por WhatsApp</a>
 </header>
 
-<!-- HERO CON TEXTO PROMOCIONAL INTEGRADO -->
-<section class="hero">
-  <p class="promo-top">• LOS MEJORES EN PRECIOS •</p>
-  <p class="promo-middle">VENTA DE LAPTOPS Y UPGRADES</p>
-  <p class="promo-bottom">
-    Aumenta la velocidad y rendimiento de tu laptop.<br>
-    Instalación de RAM y SSD con garantía profesional.
-  </p>
-  <a href="https://wa.me/18492625470" target="_blank" class="hero-btn">
-    COTIZAR AHORA
-  </a>
+<!-- SECCIÓN SERVICIOS -->
+<section id="servicios" class="section-container">
+  <h2 class="section-title">Nuestros <span>Servicios</span></h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">💻</div>
+      <h3>Venta de Equipos</h3>
+      <p>Laptops Dell y HP meticulosamente probadas, ideales para estudiantes y profesionales.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">⚡</div>
+      <h3>Upgrades RAM & SSD</h3>
+      <p>Multiplica la velocidad de tu PC actual con instalación profesional de memorias y discos M.2/NVMe.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🛠️</div>
+      <h3>Soporte Técnico</h3>
+      <p>Diagnóstico preciso, cambio de pasta térmica, limpieza profunda y reparación de hardware.</p>
+    </div>
+  </div>
 </section>
 
-<!-- CATÁLOGO DE EQUIPOS -->
-<section>
-  <h2>Equipos Disponibles</h2>
+<!-- SECCIÓN CATÁLOGO -->
+<section id="catalogo" class="section-container">
+  <h2 class="section-title">Catálogo <span>Destacado</span></h2>
   
   <div class="products">
 
@@ -302,12 +442,19 @@ footer{
         <img src="images/dell1-3.jpg" alt="Laptop Dell i5 Teclado">
         <img src="images/dell1-4.jpg" alt="Laptop Dell i5 Cerrada">
       </div>
-      <h3>LAPTOP DELL i5</h3>
-      <p>• 8GB RAM DDR4</p>
-      <p>• 512GB SSD</p>
-      <p>• Cargador Original Incluido</p>
-      <div class="price">RD$ 14,500</div>
-      <a href="https://wa.me/18492625470" target="_blank" class="btn">Comprar</a>
+      <div class="card-content">
+        <h3>Dell Latitude Core i5</h3>
+        <ul class="specs-list">
+          <li>8GB RAM DDR4</li>
+          <li>512GB SSD Alta Velocidad</li>
+          <li>Cargador Original Incluido</li>
+          <li>Garantía de Tienda</li>
+        </ul>
+        <div class="price-row">
+          <div class="price">RD$ 14,500</div>
+          <a href="https://wa.me/18492625470?text=Hola,%20me%20interesa%20la%20Dell%20i5%20de%20RD$14,500" target="_blank" class="btn-buy">Comprar</a>
+        </div>
+      </div>
     </div>
 
     <!-- PRODUCTO 2 -->
@@ -318,12 +465,19 @@ footer{
         <img src="images/dell2-3.jpg" alt="Laptop Dell i3">
         <img src="images/dell2-4.jpg" alt="Laptop Dell i3">
       </div>
-      <h3>LAPTOP DELL i3</h3>
-      <p>• 8GB RAM DDR4</p>
-      <p>• 256GB SSD</p>
-      <p>• Cargador Original Incluido</p>
-      <div class="price">RD$ 12,000</div>
-      <a href="https://wa.me/18492625470" target="_blank" class="btn">Comprar</a>
+      <div class="card-content">
+        <h3>Dell Latitude Core i3</h3>
+        <ul class="specs-list">
+          <li>8GB RAM DDR4</li>
+          <li>256GB SSD</li>
+          <li>Ideal para Estudiantes</li>
+          <li>Cargador Original</li>
+        </ul>
+        <div class="price-row">
+          <div class="price">RD$ 12,000</div>
+          <a href="https://wa.me/18492625470" target="_blank" class="btn-buy">Comprar</a>
+        </div>
+      </div>
     </div>
 
     <!-- PRODUCTO 3 -->
@@ -334,12 +488,19 @@ footer{
         <img src="images/HPA3-3.jpg" alt="Laptop HP Pavilion">
         <img src="images/HPA3-4.jpg" alt="Laptop HP Pavilion">
       </div>
-      <h3>LAPTOP PAVILION HP 17</h3>
-      <p>• 12GB RAM DDR4</p>
-      <p>• 256GB SSD</p>
-      <p>• Cargador Original Incluido</p>
-      <div class="price">RD$ 15,300</div>
-      <a href="https://wa.me/18492625470" target="_blank" class="btn">Comprar</a>
+      <div class="card-content">
+        <h3>HP Pavilion 17"</h3>
+        <ul class="specs-list">
+          <li>12GB RAM DDR4</li>
+          <li>256GB SSD</li>
+          <li>Pantalla Amplia</li>
+          <li>Cargador Original</li>
+        </ul>
+        <div class="price-row">
+          <div class="price">RD$ 15,300</div>
+          <a href="https://wa.me/18492625470" target="_blank" class="btn-buy">Comprar</a>
+        </div>
+      </div>
     </div>
 
     <!-- PRODUCTO 4 -->
@@ -350,11 +511,18 @@ footer{
         <img src="images/ram4-3.jpg" alt="Memoria RAM">
         <img src="images/ram4-4.jpg" alt="Memoria RAM">
       </div>
-      <h3>Memoria RAM 16GB / 8GB / 4GB</h3>
-      <p>• DDR4 Alta Velocidad</p>
-      <p>• Instalación Profesional</p>
-      <div class="price">Desde RD$ 2,500</div>
-      <a href="https://wa.me/18492625470" target="_blank" class="btn">Comprar</a>
+      <div class="card-content">
+        <h3>Memoria RAM DDR4</h3>
+        <ul class="specs-list">
+          <li>Capacidades: 16GB / 8GB / 4GB</li>
+          <li>Alta Frecuencia</li>
+          <li>Instalación Profesional</li>
+        </ul>
+        <div class="price-row">
+          <div class="price">Desde RD$ 2,500</div>
+          <a href="https://wa.me/18492625470" target="_blank" class="btn-buy">Cotizar</a>
+        </div>
+      </div>
     </div>
 
     <!-- PRODUCTO 5 -->
@@ -365,11 +533,18 @@ footer{
         <img src="images/SSD5-3.jpg" alt="Disco SSD">
         <img src="images/SSD5-4.jpg" alt="Disco SSD">
       </div>
-      <h3>SSD M.2 • NVMe • HDD</h3>
-      <p>• 512GB / 256GB / 128GB</p>
-      <p>• Instalación Rápida</p>
-      <div class="price">Desde RD$ 2,500</div>
-      <a href="https://wa.me/18492625470" target="_blank" class="btn">Comprar</a>
+      <div class="card-content">
+        <h3>Almacenamiento SSD</h3>
+        <ul class="specs-list">
+          <li>Formatos: M.2, NVMe, SATA</li>
+          <li>512GB / 256GB / 128GB</li>
+          <li>Clonación de Sistema Operativo</li>
+        </ul>
+        <div class="price-row">
+          <div class="price">Desde RD$ 2,500</div>
+          <a href="https://wa.me/18492625470" target="_blank" class="btn-buy">Cotizar</a>
+        </div>
+      </div>
     </div>
 
     <!-- PRODUCTO 6 -->
@@ -380,28 +555,57 @@ footer{
         <img src="images/54006-3.webp" alt="Dell Latitude 5400">
         <img src="images/54006-4.webp" alt="Dell Latitude 5400">
       </div>
-      <h3>DELL LATITUDE 5400 i5</h3>
-      <p>• 8GB RAM DDR4</p>
-      <p>• 128GB SSD</p>
-      <p>• Cargador Original Incluido</p>
-      <div class="price">RD$ 13,000</div>
-      <a href="https://wa.me/18492625470" target="_blank" class="btn">Comprar</a>
+      <div class="card-content">
+        <h3>Dell Latitude 5400 Core i5</h3>
+        <ul class="specs-list">
+          <li>8GB RAM DDR4</li>
+          <li>128GB SSD</li>
+          <li>Diseño Compacto y Robusto</li>
+          <li>Cargador Original</li>
+        </ul>
+        <div class="price-row">
+          <div class="price">RD$ 13,000</div>
+          <a href="https://wa.me/18492625470" target="_blank" class="btn-buy">Comprar</a>
+        </div>
+      </div>
     </div>
 
   </div>
 </section>
 
+<!-- SECCIÓN CONFIANZA -->
+<section id="garantia" class="trust-section">
+  <div class="trust-grid">
+    <div class="trust-item">
+      <div style="font-size: 30px;">🛡️</div>
+      <h4>Garantía Total</h4>
+      <p>Todos nuestros equipos están probados y garantizados.</p>
+    </div>
+    <div class="trust-item">
+      <div style="font-size: 30px;">👨‍💻</div>
+      <h4>Técnicos Expertos</h4>
+      <p>Instalaciones realizadas por profesionales cualificados.</p>
+    </div>
+    <div class="trust-item">
+      <div style="font-size: 30px;">📍</div>
+      <h4>Soporte Local</h4>
+      <p>Ubicados en Azua para tu comodidad y respaldo.</p>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
-  © 2026 G-TECH PERFORMANCE - Todos los derechos reservados. <br>
-  Azua, República Dominicana.
+  <strong>G-TECH PERFORMANCE</strong><br>
+  © 2026 Todos los derechos reservados. Azua, República Dominicana.<br>
+  <a href="https://www.instagram.com/g_tech_performance/" style="color:var(--accent-blue); text-decoration:none; margin-top:10px; display:inline-block;">Síguenos en Instagram</a>
 </footer>
 
-<!-- SCRIPT DEL SLIDER REPARADO -->
+<!-- SCRIPT DEL SLIDER -->
 <script>
   function startSlider(id){
     const slider = document.getElementById(id);
-    if (!slider) return; // Validación de seguridad
+    if (!slider) return;
     const images = slider.querySelectorAll("img");
     if (images.length === 0) return;
     
@@ -411,22 +615,17 @@ footer{
       images[index].classList.remove("active");
       index = (index + 1) % images.length;
       images[index].classList.add("active");
-    }, 3000);
+    }, 3500); // Ligeramente más lento (3.5s) para verse más fluido
   }
 
-  // Inicializar todos los sliders
   for (let i = 1; i <= 6; i++) {
     startSlider("slider" + i);
   }
 </script>
 
-<!-- BOTONES FLOTANTES -->
+<!-- BOTÓN FLOTANTE WHATSAPP -->
 <a href="https://wa.me/18492625470" target="_blank" class="floating-contact whatsapp-float">
-  WhatsApp
-</a>
-
-<a href="https://www.instagram.com/g_tech_performance/" target="_blank" class="floating-contact instagram-float">
-  Instagram
+  <span style="font-size: 20px;">💬</span> Escríbenos
 </a>
 
 </body>
