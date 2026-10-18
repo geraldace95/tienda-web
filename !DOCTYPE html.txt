@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G-TECH PERFORMANCE</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#0f172a;
+  text-align:center;
+  color:white;
+}
+
+/* HEADER */
+header{
+  padding:40px 20px 20px 20px;
+}
+
+.brand-title{
+  font-size:48px;
+  font-weight:800;
+  letter-spacing:2px;
+  margin:0;
+  background:linear-gradient(90deg,#2563eb,#38bdf8);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.brand-subtitle{
+  font-size:35px;
+  font-weight:600;
+  letter-spacing:3px;
+  margin-top:10px;
+  text-transform:uppercase;
+}
+
+/* HERO (Banner Principal Mejorado) */
+.hero{
+  width: 100%;
+  min-height: 550px;
+  /* Fondo oscuro con gradiente para que se lea el texto sobre la imagen */
+  background: 
+    linear-gradient(
+      to bottom,
+      rgba(15,23,42,0.8),
+      rgba(15,23,42,0.6),
+      rgba(15,23,42,0.9)
+    ),
+    url('images/banner.jpg');
+    
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.promo-top{
+  font-size:30px;
+  font-weight:900;
+  color:white;
+  margin:10px 0;
+  letter-spacing: 2px;
+}
+
+.promo-middle{
+  font-size:26px;
+  font-weight:800;
+  color:#C084FC;
+  margin:10px 0;
+}
+
+.promo-bottom{
+  font-size:20px;
+  font-weight:700;
+  color:#38bdf8;
+  margin:15px 0 30px 0;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.hero-btn{
+  display:inline-block;
+  padding:14px 40px;
+  background:#2563eb;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  font-size: 18px;
+  border-radius:50px;
+  transition:0.3s;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+.hero-btn:hover{
+  background:#1d4ed8;
+  transform:scale(1.05);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+}
+
+/* SECTIONS */
+section{
+  padding:40px 10px;
+}
+
+h2{
+  color:#a855f7;
+  font-size:32px;
+  margin-bottom: 10px;
+}
+
+/* PRODUCTS */
+.products{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+  margin-top:20px;
+}
+
+.card{
+  background:#111;
+  width:300px;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  transition:0.3s;
+  border:1px solid #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.8);
+  border-color: #38bdf8;
+}
+
+.slider{
+  position:relative;
+  width:100%;
+  height:250px;
+  overflow:hidden;
+  border-radius:10px;
+  margin-bottom:15px;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.slider img{
+  position:absolute;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  opacity:0;
+  transition:opacity 0.6s ease;
+}
+
+.slider img.active{
+  opacity:1;
+}
+
+.card h3 {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.price{
+  font-size:24px;
+  font-weight:bold;
+  color:#ff7e5f;
+  margin-top:15px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 30px;
+  background:#25D366;
+  color:white;
+  text-decoration:none;
+  border-radius:50px;
+  font-weight:bold;
+  transition:0.3s;
+  width: 80%;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+  background: #20b858;
+}
+
+footer{
+  background:#111;
+  padding:25px;
+  margin-top:40px;
+  border-top: 1px solid #222;
+  color: #777;
+}
+
+/* BOTONES FLOTANTES */
+.floating-contact{
+  position:fixed;
+  bottom:20px;
+  padding:12px 20px;
+  border-radius:50px;
+  font-weight:bold;
+  color:white;
+  text-decoration:none;
+  z-index:1000;
+  box-shadow:0 5px 20px rgba(0,0,0,0.4);
+  transition:0.3s;
+}
+
+.floating-contact:hover{
+  transform:scale(1.1);
+}
+
+.whatsapp-float{
+  left:20px;
+  background:#25D366;
+}
+
+.instagram-float{
+  right:20px;
+  background:#E1306C;
+}
+
+/* RESPONSIVE DESIGN PARA MÓVILES */
+@media (max-width: 768px) {
+  .brand-title {
+    font-size: 32px;
+  }
+  .brand-subtitle {
+    font-size: 22px;
+  }
+  .promo-top {
+    font-size: 24px;
+  }
+  .promo-middle {
+    font-size: 22px;
+  }
+  .promo-bottom {
+    font-size: 16px;
+  }
+  .whatsapp-float, .instagram-float {
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- CABECERA -->
+<header>
+  <h1 class="brand-title">G-TECH PERFORMANCE</h1>
+  <p class="brand-subtitle">RAM • SSD • LAPTOPS</p>
+</header>
+
+<!-- HERO CON TEXTO PROMOCIONAL INTEGRADO -->
+<section class="hero">
+  <p class="promo-top">• LOS MEJORES EN PRECIOS •</p>
+  <p class="promo-middle">VENTA DE LAPTOPS Y UPGRADES</p>
+  <p class="promo-bottom">
+    Aumenta la velocidad y rendimiento de tu laptop.<br>
+    Instalación de RAM y SSD con garantía profesional.
+  </p>
+  <a href="https://wa.me/18492625470" target="_blank" class="hero-btn">
+    COTIZAR AHORA
+  </a>
+</section>
+
+<!-- CATÁLOGO DE EQUIPOS -->
+<section>
+  <h2>Equipos Disponibles</h2>
+  
+  <div class="products">
+
+    <!-- PRODUCTO 1 -->
+    <div class="card">
+      <div class="slider" id="slider1">
+        <img src="images/dell1-1.jpg" class="active" alt="Laptop Dell i5 Frontal">
+        <img src="images/dell1-2.jpg" alt="Laptop Dell i5 Lateral">
+        <img src="images/dell1-3.jpg" alt="Laptop Dell i5 Teclado">
+        <img src="images/dell1-4.jpg" alt="Laptop Dell i5 Cerrada">
+      </div>
+      <h3>LAPTOP DELL i5</h3>
+      <p>• 8GB RAM DDR4</p>
+      <p>• 512GB SSD</p>
+      <p>• Cargador Original Incluido</p>
+      <div class="price">RD$ 14,500</div>
+      <a href="https://wa.me/18492625470" target="_blank" class="btn">Comprar</a>
+    </div>
+
+    <!-- PRODUCTO 2 -->
+    <div class="card">
+      <div class="slider" id="slider2">
+        <img src="images/dell2-1.jpg" class="active" alt="Laptop Dell i3">
+        <img src="images/dell2-2.jpg" alt="Laptop Dell i3">
+        <img src="images/dell2-3.jpg" alt="Laptop Dell i3">
+        <img src="images/dell2-4.jpg" alt="Laptop Dell i3">
+      </div>
+      <h3>LAPTOP DELL i3</h3>
+      <p>• 8GB RAM DDR4</p>
+      <p>• 256GB SSD</p>
+      <p>• Cargador Original Incluido</p>
+      <div class="price">RD$ 12,000</div>
+      <a href="https://wa.me/18492625470" target="_blank" class="btn">Comprar</a>
+    </div>
+
+    <!-- PRODUCTO 3 -->
+    <div class="card">
+      <div class="slider" id="slider3">
+        <img src="images/HPA3-1.jpg" class="active" alt="Laptop HP Pavilion">
+        <img src="images/HPA3-2.jpg" alt="Laptop HP Pavilion">
+        <img src="images/HPA3-3.jpg" alt="Laptop HP Pavilion">
+        <img src="images/HPA3-4.jpg" alt="Laptop HP Pavilion">
+      </div>
+      <h3>LAPTOP PAVILION HP 17</h3>
+      <p>• 12GB RAM DDR4</p>
+      <p>• 256GB SSD</p>
+      <p>• Cargador Original Incluido</p>
+      <div class="price">RD$ 15,300</div>
+      <a href="https://wa.me/18492625470" target="_blank" class="btn">Comprar</a>
+    </div>
+
+    <!-- PRODUCTO 4 -->
+    <div class="card">
+      <div class="slider" id="slider4">
+        <img src="images/ram4-1.jpg" class="active" alt="Memoria RAM">
+        <img src="images/ram4-2.jpg" alt="Memoria RAM">
+        <img src="images/ram4-3.jpg" alt="Memoria RAM">
+        <img src="images/ram4-4.jpg" alt="Memoria RAM">
+      </div>
+      <h3>Memoria RAM 16GB / 8GB / 4GB</h3>
+      <p>• DDR4 Alta Velocidad</p>
+      <p>• Instalación Profesional</p>
+      <div class="price">Desde RD$ 2,500</div>
+      <a href="https://wa.me/18492625470" target="_blank" class="btn">Comprar</a>
+    </div>
+
+    <!-- PRODUCTO 5 -->
+    <div class="card">
+      <div class="slider" id="slider5">
+        <img src="images/SSD5-1.jpg" class="active" alt="Disco SSD">
+        <img src="images/SSD5-2.jpg" alt="Disco SSD">
+        <img src="images/SSD5-3.jpg" alt="Disco SSD">
+        <img src="images/SSD5-4.jpg" alt="Disco SSD">
+      </div>
+      <h3>SSD M.2 • NVMe • HDD</h3>
+      <p>• 512GB / 256GB /
