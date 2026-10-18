@@ -33,6 +33,7 @@ nav {
   width: 100%;
   background: rgba(11, 17, 32, 0.85);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Soporte para Safari/iPhone */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,7 +71,7 @@ nav {
   color: var(--accent-cyan);
 }
 
-/* BANNER HERO PROFESIONAL */
+/* BANNER HERO PROFESIONAL (Corregido para Móviles) */
 .hero {
   margin-top: 60px; /* Compensa el navbar fijo */
   width: 100%;
@@ -81,17 +82,18 @@ nav {
   align-items: center;
   text-align: center;
   padding: 40px 20px;
+  position: relative; /* Necesario para el overlay oscuro si lo hacemos con pseudo-elemento, pero lo mantendremos simple */
   
-  /* Imagen de fondo profesional (Placa base/Tech) con overlay oscuro */
+  /* CORRECCIÓN: Quitamos background-attachment: fixed; que rompe los iPhones */
   background: linear-gradient(
       to bottom,
       rgba(11, 17, 32, 0.7),
       rgba(11, 17, 32, 0.95)
     ),
-    url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2000&auto=format&fit=crop');
+    url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200&auto=format&fit=crop');
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .hero-tag {
@@ -161,7 +163,7 @@ nav {
   color: var(--accent-blue);
 }
 
-/* NUEVA SECCIÓN: SERVICIOS */
+/* SECCIÓN: SERVICIOS */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -228,7 +230,7 @@ nav {
   position: relative;
   width: 100%;
   height: 250px;
-  background: #fff; /* Fondo blanco para que resalten las fotos de los equipos */
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -372,16 +374,23 @@ footer {
 }
 
 .whatsapp-float {
-  right: 20px; /* Movido a la derecha (estándar moderno) */
+  right: 20px;
   background: var(--whatsapp);
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE - CORRECCIONES PARA MÓVILES */
 @media (max-width: 768px) {
-  .nav-links { display: none; } /* Oculta menú en móviles para limpieza */
-  .hero h1 { font-size: 36px; }
+  .nav-links { display: none; }
+  .hero {
+    min-height: 50vh; /* Ajuste de altura para celulares */
+    padding: 60px 20px;
+    background-position: center; /* Asegura que la imagen esté centrada */
+  }
+  .hero h1 { font-size: 32px; } /* Texto más pequeño en móviles para que no se salga */
+  .hero p { font-size: 16px; }
   .section-title { font-size: 26px; }
-  .trust-grid { flex-direction: column; gap: 20px; }
+  .trust-grid { flex-direction: column; gap: 30px; }
+  .products { grid-template-columns: 1fr; } /* Asegura 1 sola columna en móviles */
 }
 </style>
 </head>
@@ -615,7 +624,7 @@ footer {
       images[index].classList.remove("active");
       index = (index + 1) % images.length;
       images[index].classList.add("active");
-    }, 3500); // Ligeramente más lento (3.5s) para verse más fluido
+    }, 3500); 
   }
 
   for (let i = 1; i <= 6; i++) {
